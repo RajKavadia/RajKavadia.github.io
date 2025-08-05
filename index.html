@@ -1,166 +1,544 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>Raj </title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="author" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="css/kube.min.css" />
-    <link rel="stylesheet" href="css/font-awesome.min.css" />
-    <link rel="stylesheet" href="css/custom.min.css" />
-    <link rel="shortcut icon" href="img/favicon.png" />
-	<link href='https://fonts.googleapis.com/css?family=Playfair+Display+SC:700' rel='stylesheet' type='text/css'>
-	<link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
-	<style>
-		.intro h1:before {
-			/* Edit this with your name or anything else */
-			content: 'Raj';
-		}
-	</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raj Kavadia - Resume</title>
+
+    <!-- INLINE CSS for a Refined, Professional, and ATS-Friendly Template -->
+    <style>
+        /* Material style button */
+        .material-btn {
+            display: inline-block;
+            padding: 12px 24px;
+            font-size: 16px;
+            color: white;
+            background: #232633;
+            border: none;
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: background 0.3s, box-shadow 0.3s;
+            outline: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .material-btn:hover {
+            background: #3700b3;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Hide on print */
+        @media print {
+            .material-btn {
+                display: none !important;
+            }
+        }
+
+        @page {
+            size: A4;
+            margin: 25mm 20mm;
+        }
+
+        /* --- General Styles --- */
+        body {
+            font-family: "Segoe UI";
+            line-height: 1.6;
+            background-color: #f9f9f9;
+            color: #2d2d2d;
+            /* Off-black for better readability */
+            margin: 0;
+            padding: 0;
+            font-size: 11pt;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 30px auto;
+            padding: 40px;
+            background-color: #fff;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.07);
+        }
+
+        /* --- Header & Contact --- */
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-family: "Segoe UI";
+            font-size: 26pt;
+            margin: 0;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .header .job-title {
+            font-size: 14pt;
+            margin: 5px 0 15px 0;
+            color: #555;
+            font-weight: normal;
+        }
+
+        .contact-info {
+            font-size: 10.5pt;
+            color: #444;
+        }
+
+        .contact-info a {
+            color: #444;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-info span {
+            margin: 0 8px;
+            color: #999;
+        }
+
+        /* --- Sections --- */
+        .section {
+            margin-bottom: 10px;
+        }
+
+        .section h2 {
+            font-family: "Segoe UI";
+            font-size: 16pt;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 8px;
+            margin: 0 0 10px 0;
+            color: #333;
+            letter-spacing: 0.5px;
+        }
+
+        /* --- Experience & Education --- */
+        .entry {
+            margin-bottom: 25px;
+        }
+
+        .entry .heading {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 2px;
+        }
+
+        .entry .title {
+            font-weight: bold;
+            font-size: 12pt;
+            color: #333;
+        }
+
+        .entry .company-location {
+            font-style: normal;
+            font-weight: bold;
+            color: #555;
+            font-size: 11pt;
+            margin-bottom: 8px;
+        }
+
+        .entry .date {
+            font-weight: normal;
+            font-size: 11pt;
+            color: #555;
+            white-space: nowrap;
+            padding-left: 0px;
+            padding-top: 3.5px;
+        }
+
+        .entry ul {
+            margin: 5px 0 0 0;
+            padding-left: 20px;
+            list-style-type: disc;
+        }
+
+        .entry li {
+            margin-bottom: 6px;
+        }
+
+        /* --- Education Specific --- */
+        .education-entry .company-location {
+            font-style: normal;
+            font-weight: normal;
+            color: #555;
+            font-size: 11pt;
+            margin-bottom: 15px;
+        }
+
+
+        /* --- Skills Section --- */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 190px auto;
+            gap: 10px 15px;
+        }
+
+        .skills-grid strong {
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* --- App Links --- */
+        .app-links-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .app-links-list li {
+            margin-bottom: 5px;
+        }
+
+        .app-links-list a {
+            color: #1a0dab;
+            /* Standard link color */
+            text-decoration: none;
+        }
+
+        .app-links-list a:hover {
+            text-decoration: underline;
+        }
+
+        /* --- Print Styles --- */
+        @media print {
+            body {
+                background-color: #fff;
+            }
+
+            .container {
+                margin: 0;
+                padding: 0;
+                box-shadow: none;
+                max-width: 100%;
+            }
+        }
+    </style>
 </head>
+
 <body>
-	<!-- Navigation -->
-	<div class="main-nav">
-		<div class="container">
-			<header class="group top-nav">
-				<div class="navigation-toggle" data-tools="navigation-toggle" data-target="#navbar-1">
-				    <span class="logo">DRACO</span>
-				</div>
-			    <nav id="navbar-1" class="navbar item-nav">
-				    <ul>
-				        <li class="active"><a href="#about">About</a></li>
-				        <li><a href="#experiences">Experiences</a></li>
-				        <li><a href="#achievements">Achievements</a></li>
-				        <li><a href="#skills">Skills</a></li>
-				    </ul>
-				</nav>
-			</header>
-		</div>
-	</div>
 
-	<!-- Introduction -->
-	<div class="intro section" id="about" >
-		<div class="container">
-			<p> I am Raj Kavadia and I am Mobile Application Developer</p>
-			<div class="units-row units-split wrap">
-				<div class="unit-20">
-					<img src="img/ava.jpg" alt="Avatar">
-				</div>
-				<div class="unit-80">
-					<h1>I live in<br><span id="typed"></span></h1>
-				</div>
-				<p>
-					Raj in different contexts means "rule", "king", "ruler", "emperor" or "royalty" and "power" in the Sanskrit language families of the Indian sub-continent, including Romanes, its closest Indo-European relative. The word is cognate to Latin rex.
-				</p>
-			</div>
-		</div>
-	</div>
+    <div class="container">
+        <button class="material-btn" onclick="window.print()">Print</button>
 
-	<!-- Work Experience -->
-	<div class="work section second" id="experiences">
-		<div class="container">
-			<h1>Work<br>Experiences</h1>
-			<ul class="work-list">
-				<li>2016-2017</li>
-				<li><a href="#">Palle Technology</a></li>
-				<li>Android developer Trainee</li>
-			</ul>
-			<ul class="work-list">
-				<li>2017-2018</li>
-				<li><a href="#">Ghost Technology</a></li>
-				<li>Android Developer</li>
-			</ul>
-			<ul class="work-list">
-				<li>2018-currently</li>
-				<li><a href="#">Rsp Innovations</a></li>
-				<li>Senior Android Developer</li>
-			</ul>
-		</div>
-	</div>
+        <!-- Header -->
+        <header class="header">
+            <h1>Raj Kavadia</h1>
+            <p class="job-title">Senior Mobile Application Developer</p>
+            <div class="contact-info">
+                <a href="mailto:rajkavadia78@gmail.com">rajkavadia78@gmail.com</a>
+                <span>|</span>
+                +91 82382 67544
+                <span>|</span>
+                Ahmedabad, Gujarat, India
+            </div>
+        </header>
 
-	<!-- Award & Achievements -->
-	<div class="award section second" id="achievements">
-		<div class="container">
-			<h1>Award &amp;<br>Achievements</h1>
-			<ul class="award-list list-flat">
-				<li>January 2018</li>
-				<li>Have secured 361st rank out of 38020 programmers TechGig </li>
-			</ul>
-			<ul class="award-list list-flat">
-				<li>December 2017</li>
-				<li>Have successfully deployed 3 App</li>
-				<li>I have deployed 2 apps within 2 years on Play store and one app in F-Droid.</li>
-			</ul>
-			<ul class="award-list list-flat">
-				<li>March 2019</li>
-				<li>Have successfully developed opensource Android-Application And deploy it on Github</li>
-			</ul>
-			
-			<ul class="award-list list-flat">
-				<li>March 2020</li>
-				<li>Have Developed library for Developers to use </li>
-			</ul>
-		</div>
-	</div>
+        <!-- Summary Section -->
+        <div class="section">
+            <h2>Summary</h2>
+            <p>
+                Mobile application developer with 7+ years of experience specializing in native Android and
+                cross-platform (Flutter) app development. Skilled in delivering robust, scalable, and user-centric
+                solutions for Android, iOS, and web. Adept in modern architectures (MVVM, MVC, Bloc), cloud services
+                (Firebase, AWS), and secure application practices. Recognized for driving performance optimizations,
+                cross-functional collaboration, and full lifecycle project delivery.
+            </p>
+        </div>
 
-	<!-- Technical Skills -->
-	<div class="skills section second" id="skills">
-		<div class="container">
-			<h1>Technical<br>Skills</h1>
-			<ul class="skill-list list-flat">
-				<li>Web Technology</li>
-				<li>HTML5 / CSS3 / PHP5</li>
-			</ul>
-			<ul class="skill-list list-flat">
-				<li>Database</li>
-				<li>MySQL / MongoDB </li>
-			</ul>
-			<ul class="skill-list list-flat">
-				<li>Framework</li>
-				<li>Android / Xamarin / RXJava / NodeJs</li>
-			</ul>
-			<ul class="skill-list list-flat">
-				<li>Languages</li>
-				<li>Java / Kotlin / C# / NodeJs / C++(NDK) / Python / Dart / HTML / CSS / Javascript </li>
-			</ul>
-			
-		</div>
-	</div>
+        <!-- Technical Skills Section -->
+        <div class="section">
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <strong>Programming Languages:</strong> <span>Kotlin, Java, Dart, JavaScript</span>
+                <strong>Frameworks/Platforms:</strong> <span>Android SDK, Flutter, Flutter Web</span>
+                <strong>Architectures:</strong> <span>MVVM, MVC, Bloc</span>
+                <strong>APIs & Libraries:</strong> <span>Retrofit, GoogleMapView, YoutubeView, Method Channels</span>
+                <strong>Backend/Cloud:</strong> <span>Firebase, AWS</span>
+                <strong>UI/UX:</strong> <span>Jetpack Compose, Responsive UI</span>
+                <strong>Security/Testing:</strong> <span>Encryption, Penetration Testing, MobSF, Reverse Engineering,
+                    VAPT</span>
+                <strong>Other:</strong> <span>Coroutines, SQLITE, WebRTC, Video Calling</span>
+            </div>
+        </div>
 
-	<!-- Quote -->
-	<div class="quote">
-		<div class="container text-centered">
-			<h1>fight against the ugliness.</h1>
-		</div>
-	</div>
+        <!-- Professional Experience Section -->
+        <div class="section">
+            <h2>Professional Experience</h2>
+            <div class="entry">
+                <div class="heading">
+                    <span class="title">Senior Mobile Application Developer</span>
+                    <span class="date">Mar 2023 – Present</span>
+                </div>
+                <div class="company-location">OnlinePSBLoans</div>
+                <ul>
+                    <li>Lead the design and implementation of responsive applications across Android, iOS, and Web using
+                        Flutter and native toolkits.</li>
+                    <li>Conduct code reviews and optimize performance for scalable, secure, and maintainable codebases.
+                    </li>
+                    <li>Mentor junior developers, fostering best practices in coding, testing, and system architecture.
+                    </li>
+                    <li>Ensure compliance with industry security standards and align features with organizational needs.
+                    </li>
+                </ul>
+            </div>
+            <div class="entry">
+                <div class="heading">
+                    <span class="title">Lead Mobile Application Developer</span>
+                    <span class="date">Dec 2022 – Mar 2023</span>
+                </div>
+                <div class="company-location">Ekshot Advertcomm Private Ltd.</div>
+                <ul>
+                    <li>Maintained and enhanced Android applications for new OS versions; collaborated closely with
+                        UI/UX, QA, and backend teams.</li>
+                    <li>Drove new feature integration, bug resolution strategies, and improved app release cycles.</li>
+                    <li>Introduced architectural improvements using MVVM to increase code modularity and testability.
+                    </li>
+                    <li>Managed build configurations and automated deployment processes to streamline releases.</li>
+                </ul>
+            </div>
+            <div class="entry">
+                <div class="heading">
+                    <span class="title">Mobile Application Developer</span>
+                    <span class="date">Oct 2020 – Dec 2022</span>
+                </div>
+                <div class="company-location">E2 Infosystems, Chennai</div>
+                <ul>
+                    <li>Developed and deployed multiplatform (iOS/Android) apps with Flutter and integrated cloud
+                        services (Firebase/AWS).</li>
+                    <li>Implemented hybrid (Flutter + native Android) modules within single applications using Method
+                        Channels.</li>
+                    <li>Managed state efficiently in complex Flutter applications using the Bloc pattern for predictable
+                        state changes.</li>
+                    <li>Coordinated with backend engineers for seamless API integration and data synchronization.</li>
+                </ul>
+            </div>
+            <div class="entry">
+                <div class="heading">
+                    <span class="title">Android Developer</span>
+                    <span class="date">Jul 2018 – Aug 2020</span>
+                </div>
+                <div class="company-location">RSP Innovations LLP, Bangalore</div>
+                <ul>
+                    <li>Built robust Android applications in Java and Kotlin, including e-commerce features.</li>
+                    <li>Integrated third-party payment gateways (PayUMoney, RazorPay) and order tracking systems.</li>
+                    <li>Implemented responsive user interfaces to support a wide range of Android device sizes and
+                        resolutions.</li>
+                    <li>Collaborated with product managers to define feature requirements and timelines.</li>
+                </ul>
+            </div>
+            <div class="entry">
+                <div class="heading">
+                    <span class="title">Android Developer</span>
+                    <span class="date">Jul 2017 – Jul 2018</span>
+                </div>
+                <div class="company-location">Ghost Technology LTD, Delhi</div>
+                <ul>
+                    <li>Integrated libraries for animations, Google Maps (GoogleMapView), and video playback
+                        (YoutubeView).</li>
+                    <li>Developed complex user interfaces based on detailed mockups from the UI/UX design team.</li>
+                    <li>Participated in the full software development lifecycle, from initial concept to debugging and
+                        public release.</li>
+                    <li>Identified and resolved performance bottlenecks in existing application modules.</li>
+                </ul>
+            </div>
+            <div class="entry">
+                <div class="heading">
+                    <span class="title">Trainee Android Developer</span>
+                    <span class="date">Jul 2016 – Jul 2017</span>
+                </div>
+                <div class="company-location">Palle Technology LTD, Bangalore</div>
+                <ul>
+                    <li>Assisted senior developers in writing and debugging Java code for Android applications.</li>
+                    <li>Learned and applied fundamental Android concepts, including Activities, Services, and Broadcast
+                        Receivers.</li>
+                    <li>Contributed to the development of UI layouts using XML and handled basic user interactions.</li>
+                    <li>Helped create technical documentation for newly developed features.</li>
+                </ul>
+            </div>
+        </div>
 
-	<footer>
-		<div class="container">
-			<div class="units-row">
-			    <div class="unit-50">
-					<ul class="social list-flat right">
-						<p><a href="https://stackoverflow.com/users/9186913/raj-kavadia"><img src="https://img.icons8.com/ios/50/000000/stackoverflow.png" width="40" height="40"></a></p>
-						<p><a href="https://www.techgig.com/rajkavadia"><img src="img/techgig.jpg" width="40" height="40"></a></p>
-						
+        <!-- Education Section -->
+        <div class="section">
+            <h2>Education</h2>
+            <div class="entry education-entry">
+                <div class="heading">
+                    <span class="title">B.E., Computer Science</span>
+                    <span class="date">Jun 2012 – Jun 2016</span>
+                </div>
+                <div class="company-location">Marwadi Education Foundation</div>
+            </div>
+            <div class="entry education-entry">
+                <div class="heading">
+                    <span class="title">Practical Cyber Security for Practitioners</span>
+                    <span class="date">Jul 2024 – Present</span>
+                </div>
+                <div class="company-location">NPTEL</div>
+            </div>
+        </div>
+        <div class="section">
+            <h2>Projects</h2>
+            <!-- GST Sahay -->
+            <div class="entry">
+                <div class="heading">
+                    <span class="title">GST Sahay</span>
+                    <span class="date">Jan 2024 – Present</span>
+                </div>
+                <div class="company-location">Associated with Online PSB Loans</div>
+                <ul>
+                    <li>
+                        GST Sahay is an innovative fintech solution by FinAGG, addressing MSME financing challenges by
+                        leveraging GST data and integrating with OCEN and Account Aggregator frameworks. It facilitates
+                        quick, collateral-free invoice-based financing, helping MSMEs enhance cash flow and business
+                        growth.
+                    </li>
+                    <li>
+                        Developed a cross-platform mobile app as a Flutter Developer, enabling MSMEs to access financing
+                        quickly and securely.
+                    </li>
+                    <li>
+                        Designed and implemented UI with responsive layouts, integrating secure GST data handling for
+                        seamless user experience.
+                    </li>
+                    <li>
+                        Utilized GETX & Bloc architecture to deliver scalable, maintainable, and secure solutions for
+                        Android and other platforms.
+                    </li>
+                    <li>
+                        <strong>Skills:</strong> Flutter · Cross-platform Development · Android · Responsive Web Design
+                    </li>
+                </ul>
+            </div>
 
-					</ul>
-			    </div>
-			</div>
-		</div>
-	</footer>
+            <!-- CATIE App -->
+            <div class="entry">
+                <div class="heading">
+                    <span class="title">CATIE App</span>
+                </div>
+                <div class="company-location">Associated with E2 Infosystems Ltd</div>
+                <ul>
+                    <li>
+                        CATIE is a communication, self-service, and resident engagement platform helping seniors connect
+                        with their community and staff.
+                    </li>
+                    <li>
+                        Built mobile apps for Android and iOS, focusing on accessibility, performance, and a
+                        user-friendly interface.
+                    </li>
+                    <li>
+                        Developed and integrated backend APIs and features, including community newsfeed and
+                        self-service options.
+                    </li>
+                    <li>
+                        Conducted thorough testing to ensure a seamless, accessible experience for seniors.
+                    </li>
+                    <li>
+                        <strong>Skills:</strong> Flutter · Android · Kotlin · Dart
+                    </li>
+                </ul>
+            </div>
 
-	<!-- Javascript -->
-	<script src="js/jquery.min.js"></script>
-	<script src="js/typed.min.js"></script>
-    <script src="js/kube.min.js"></script>
-    <script src="js/site.js"></script>
-    <script>
-		function newTyped(){}$(function(){$("#typed").typed({
-		// Change to edit type effect
-		strings: ["far northern sky", "your galaxy", "everywhere"],
+            <!-- JanSuraksha -->
+            <div class="entry">
+                <div class="heading">
+                    <span class="title">Jan Suraksha</span>
+                </div>
+                <ul>
+                    <li>
+                        JanSuraksha App allows users to easily apply for insurance policies (PMJJBY and PMSBY) under the
+                        Govt. of India’s Social Security initiatives.
+                    </li>
+                    <li>
+                        Created a cross-platform app in Flutter with intuitive UI, integrating backend policy
+                        application systems.
+                    </li>
+                    <li>
+                        Focused on security, responsiveness, and user-centric workflows for citizens to access vital
+                        insurance easily.
+                    </li>
+                    <li>
+                        <strong>Skills:</strong> Flutter · Dart · Android
+                    </li>
+                </ul>
+            </div>
 
-		typeSpeed:90,backDelay:700,contentType:"html",loop:!0,resetCallback:function(){newTyped()}}),$(".reset").click(function(){$("#typed").typed("reset")})});
-    </script>
+            <!-- PNB Sahay -->
+            <div class="entry">
+                <div class="heading">
+                    <span class="title">PNB Sahay</span>
+                </div>
+                <ul>
+                    <li>
+                        PNB Sahay is a digital platform from Punjab National Bank to provide MSMEs with the working
+                        capital they need through streamlined invoice-based financing.
+                    </li>
+                    <li>
+                        Developed the mobile UI in Flutter, integrating with PNB’s loan systems and ensuring robust,
+                        scalable, and efficient user workflows.
+                    </li>
+                    <li>
+                        Prioritized a frictionless user experience, helping MSMEs quickly access working capital
+                        financing for business growth.
+                    </li>
+                    <li>
+                        <strong>Skills:</strong> Flutter · Dart · Cross-platform Development
+                    </li>
+                </ul>
+            </div>
+
+            <!-- SBI Sahaj -->
+            <div class="entry">
+                <div class="heading">
+                    <span class="title">SBI MSME Sahaj</span>
+                </div>
+                <ul>
+                    <li>
+                        SBI MSME Sahaj is an initiative by State Bank of India for fast and convenient invoice financing
+                        for MSMEs.
+                    </li>
+                    <li>
+                        Developed the cross-platform mobile app in Flutter, with integrations for online loan
+                        application and user-friendly, responsive design.
+                    </li>
+                    <li>
+                        Enabled quick onboarding and efficient access to working capital for MSMEs using modern
+                        front-end technologies.
+                    </li>
+                    <li>
+                        <strong>Skills:</strong> Flutter · Dart · Cross-platform Development
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+        <!-- Key App Releases Section -->
+        <div class="section">
+            <h2>Key App Releases</h2>
+            <ul class="app-links-list">
+                <li><a href="https://play.google.com/store/apps/details?id=com.statussolutions.catmobile"
+                        target="_blank">Catie Mobile (Android)</a></li>
+                <li><a href="https://apps.apple.com/us/app/catie-mobile/id1613885464" target="_blank">Catie Mobile
+                        (iOS)</a></li>
+                <li><a href="https://www.statussolutions.com/acute-care-catie-communication-portal/"
+                        target="_blank">Acute Care Catie Communication Portal</a></li>
+                <li><a href="https://play.google.com/store/apps/details?id=com.EkShotBusiness&hl=en_IN&gl=US"
+                        target="_blank">EkShot Business (Google Play)</a></li>
+                <li><a href="https://play.google.com/store/apps/details?id=com.opl.jansuraksha&hl=en_SG"
+                        target="_blank">Jansuraksha (Google Play)</a></li>
+                <li><a href="https://play.google.com/store/apps/details?id=com.project.prayaas.sidbi&hl=en-US">Prayaas
+                        (Microfinance, Google Play)</li>
+                <li><a href="https://play.google.com/store/apps/details?id=com.tradgo&hl=en-US">Tradgo Recharge & Bill
+                        Payment</a></li>
+            </ul>
+        </div>
+
+    </div>
+
 </body>
+
 </html>
