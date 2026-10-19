@@ -317,6 +317,18 @@
     haloRing.position.copy(halo.position);
     stageGroup.add(haloRing);
 
+    // Rainbow arc behind the character, Krikey-style colorful scene
+    const rainbowColors = [0xef4444, 0xf97316, 0xfacc15, 0x22c55e, 0x3b82f6, 0x8b5cf6];
+    rainbowColors.forEach(function (color, index) {
+      const arc = new THREE.Mesh(
+        new THREE.TorusGeometry(1.25 - index * 0.045, 0.03, 8, 64, Math.PI),
+        new THREE.MeshBasicMaterial({ color: color })
+      );
+      arc.rotation.z = Math.PI;
+      arc.position.set(0, 0.72, -0.72);
+      stageGroup.add(arc);
+    });
+
     // Person Character Group — scaled up so the face is the hero of the stage
     const devGroup = new THREE.Group();
     devGroup.position.set(0, -0.3, -0.35);
@@ -514,6 +526,15 @@
     smile.position.set(0, -0.165, 0.385);
     headGroup.add(smile);
 
+    // Inner mouth that opens and closes so the avatar talks, Krikey-style
+    const talkMouth = new THREE.Mesh(
+      new THREE.SphereGeometry(0.052, 16, 12),
+      new THREE.MeshBasicMaterial({ color: 0x4a2420 })
+    );
+    talkMouth.scale.set(1.05, 0.18, 0.32);
+    talkMouth.position.set(0, -0.2, 0.355);
+    headGroup.add(talkMouth);
+
     const lowerLip = new THREE.Mesh(new THREE.SphereGeometry(0.042, 14, 14), lipMat);
     lowerLip.scale.set(1.35, 0.5, 0.5);
     lowerLip.position.set(0, -0.225, 0.365);
@@ -545,10 +566,10 @@
       eyeGroup.position.set(x, 0.03, 0.355);
 
       const white = new THREE.Mesh(
-        new THREE.SphereGeometry(0.066, 20, 20),
+        new THREE.SphereGeometry(0.078, 20, 20),
         new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 0.35 })
       );
-      white.scale.set(1.08, 1.18, 0.5);
+      white.scale.set(1.05, 1.22, 0.5);
       eyeGroup.add(white);
 
       const iris = new THREE.Mesh(
@@ -860,8 +881,15 @@
       userRotationY += (targetRotationY + modeRotOffset - userRotationY) * 0.08;
       stageGroup.rotation.y = userRotationY + Math.sin(t * 0.7) * 0.05;
 
-      // Breathing torso animation
+      // Krikey-like lively idle: a small bounce plus breathing
+      devGroup.position.y = -0.3 + Math.sin(t * 2.6) * 0.028;
       torsoGroup.position.y = 0.55 + Math.sin(t * 2.2) * 0.018;
+
+      // Talking mouth — opens in a speech rhythm, wider while waving or shipping
+      const talkRate = currentMode === "shipping" || waveTimer > 0 ? 11 : 6.5;
+      const talkOpen = Math.abs(Math.sin(t * talkRate));
+      talkMouth.scale.y = 0.12 + talkOpen * (currentMode === "coding" ? 0.55 : 0.85);
+      lowerLip.position.y = -0.225 - talkOpen * 0.03;
 
       // Head & eyes smoothly track pointer, with a gentle Memoji-like bob and tilt
       const targetHeadYaw = pointerX * 0.42 + (currentMode === "mcp" ? 0.35 : 0);
@@ -982,11 +1010,15 @@
       const cx = w * 0.46 + state.pointerX * 8;
       const cy = h * 0.54 + Math.sin(t * 2.2) * 4;
 
-      // Portrait halo behind the head (reference backdrop) + soft desk glow
-      ctx.fillStyle = "#c4eef0";
-      ctx.beginPath();
-      ctx.arc(cx, cy - 45, 118, 0, Math.PI * 2);
-      ctx.fill();
+      // Sky scene with a rainbow arc, Krikey-style
+      const rainbow = ["#ef4444", "#f97316", "#facc15", "#22c55e", "#3b82f6", "#8b5cf6"];
+      rainbow.forEach(function (color, index) {
+        ctx.strokeStyle = color;
+        ctx.lineWidth = 7;
+        ctx.beginPath();
+        ctx.arc(cx, cy + 20, 150 - index * 8, Math.PI * 1.08, Math.PI * 1.92);
+        ctx.stroke();
+      });
 
       const deskGrad = ctx.createRadialGradient(cx, cy + 105, 10, cx, cy + 105, 150);
       deskGrad.addColorStop(0, "rgba(59, 130, 246, 0.38)");
