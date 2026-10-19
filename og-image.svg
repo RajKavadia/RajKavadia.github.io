@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b0f19" />
+      <stop offset="50%" stop-color="#111827" />
+      <stop offset="100%" stop-color="#1e3a8a" />
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#60a5fa" />
+    </linearGradient>
+    <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#1f2937" stroke-width="1" />
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <rect width="1200" height="630" fill="url(#grid)" opacity="0.6" />
+  <circle cx="1020" cy="180" r="240" fill="#1d4ed8" opacity="0.2" />
+  <circle cx="950" cy="460" r="180" fill="#3b82f6" opacity="0.15" />
+
+  <g transform="translate(80, 95)">
+    <rect x="0" y="0" width="310" height="40" rx="20" fill="#1e3a8a" stroke="#3b82f6" stroke-width="1.5" />
+    <circle cx="24" cy="20" r="6" fill="#34d399" />
+    <text x="42" y="26" fill="#93c5fd" font-family="monospace" font-size="16" font-weight="600">9+ YRS MOBILE ENGINEERING</text>
+
+    <text x="0" y="125" fill="#ffffff" font-family="sans-serif" font-size="76" font-weight="800">Raj Kavadia</text>
+    <text x="0" y="180" fill="url(#accent)" font-family="sans-serif" font-size="36" font-weight="700">Senior Mobile Engineer · Android, Flutter &amp; MCP Tooling</text>
+
+    <text x="0" y="245" fill="#cbd5e1" font-family="sans-serif" font-size="24">Shipping high-scale FinTech, Government &amp; Senior-Care apps + 11 pub.dev packages</text>
+
+    <g transform="translate(0, 295)" font-family="monospace" font-size="18" font-weight="600">
+      <rect x="0" y="0" width="125" height="44" rx="10" fill="#1f2937" stroke="#374151" />
+      <text x="24" y="28" fill="#a78bfa">Kotlin</text>
+
+      <rect x="140" y="0" width="135" height="44" rx="10" fill="#1f2937" stroke="#374151" />
+      <text x="164" y="28" fill="#38bdf8">Flutter</text>
+
+      <rect x="290" y="0" width="205" height="44" rx="10" fill="#1f2937" stroke="#374151" />
+      <text x="312" y="28" fill="#4ade80">Jetpack Compose</text>
+
+      <rect x="510" y="0" width="170" height="44" rx="10" fill="#1f2937" stroke="#374151" />
+      <text x="532" y="28" fill="#fbbf24">MCP Servers</text>
+
+      <rect x="695" y="0" width="230" height="44" rx="10" fill="#1f2937" stroke="#374151" />
+      <text x="717" y="28" fill="#f472b6">Clean Architecture</text>
+    </g>
+
+    <text x="0" y="415" fill="#94a3b8" font-family="monospace" font-size="22">rajkavadia.github.io · github.com/RajKavadia · Ahmedabad, India</text>
+  </g>
+</svg>

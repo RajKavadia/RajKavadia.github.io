@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Raj Kavadia — Senior Mobile Engineer Resume</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --accent: #1d4ed8;
+      --text: #111827;
+      --muted: #4b5563;
+      --border: #e5e7eb;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      color: var(--text);
+      background: #f3f4f6;
+      line-height: 1.55;
+      font-size: 10.5pt;
+    }
+    .toolbar {
+      max-width: 860px;
+      margin: 24px auto 0;
+      padding: 0 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 14px;
+      text-decoration: none;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: all 0.2s ease;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+    }
+    .btn-primary:hover {
+      background: #1e40af;
+    }
+    .btn-secondary {
+      background: #fff;
+      color: #1f2937;
+      border-color: #d1d5db;
+    }
+    .btn-secondary:hover {
+      background: #f9fafb;
+    }
+    .page {
+      max-width: 860px;
+      margin: 16px auto 48px;
+      background: #fff;
+      padding: 44px 48px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
+    }
+    header {
+      border-bottom: 2px solid var(--text);
+      padding-bottom: 16px;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    h1 {
+      font-size: 26pt;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+    }
+    .subtitle {
+      font-size: 12pt;
+      font-weight: 600;
+      color: var(--accent);
+      margin-top: 4px;
+    }
+    .contact {
+      text-align: right;
+      font-size: 9.5pt;
+      color: var(--muted);
+    }
+    .contact a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .contact a:hover {
+      color: var(--accent);
+      text-decoration: underline;
+    }
+    section {
+      margin-bottom: 18px;
+    }
+    h2 {
+      font-size: 11pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 4px;
+      margin-bottom: 10px;
+    }
+    .summary {
+      color: #374151;
+    }
+    .metrics-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .metric-box {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 8px 10px;
+    }
+    .metric-val {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 700;
+      font-size: 13pt;
+      color: var(--accent);
+    }
+    .metric-lbl {
+      font-size: 8.5pt;
+      color: var(--muted);
+    }
+    .skills-table {
+      display: grid;
+      grid-template-columns: 165px 1fr;
+      gap: 6px 14px;
+      font-size: 9.8pt;
+    }
+    .skills-table strong {
+      color: #111827;
+    }
+    .entry {
+      margin-bottom: 14px;
+    }
+    .entry:last-child {
+      margin-bottom: 0;
+    }
+    .entry-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+    }
+    .entry-title {
+      font-weight: 700;
+      font-size: 10.5pt;
+    }
+    .entry-company {
+      font-weight: 600;
+      color: var(--accent);
+    }
+    .entry-date {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 9pt;
+      color: var(--muted);
+    }
+    ul {
+      padding-left: 18px;
+      margin-top: 4px;
+    }
+    li {
+      margin-bottom: 3px;
+      color: #374151;
+    }
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .card {
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 10px 12px;
+    }
+    .card-title {
+      font-weight: 700;
+      font-size: 10pt;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .card-tag {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 8pt;
+      color: var(--accent);
+      background: #eff6ff;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+    @media print {
+      body { background: #fff; }
+      .toolbar { display: none !important; }
+      .page { margin: 0; padding: 0; box-shadow: none; max-width: 100%; }
+      @page { size: A4; margin: 14mm 14mm; }
+    }
+    @media (max-width: 640px) {
+      .page { padding: 24px 20px; }
+      .metrics-row, .two-col, .skills-table { grid-template-columns: 1fr; }
+      .contact { text-align: left; }
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar">
+    <a href="/" class="btn btn-secondary">&larr; Back to Portfolio</a>
+    <button class="btn btn-primary" onclick="window.print()">Print / Save PDF</button>
+  </div>
+
+  <main class="page">
+    <header>
+      <div>
+        <h1>Raj Kavadia</h1>
+        <p class="subtitle">Senior Mobile Engineer · Android, Flutter &amp; AI/MCP Tooling</p>
+      </div>
+      <div class="contact">
+        <div>Ahmedabad, Gujarat, India (Open to Remote)</div>
+        <div><a href="mailto:rajkavadia78@gmail.com">rajkavadia78@gmail.com</a> · <a href="tel:+918238267544">+91 82382 67544</a></div>
+        <div><a href="https://rajkavadia.github.io">rajkavadia.github.io</a> · <a href="https://github.com/RajKavadia">github.com/RajKavadia</a> · <a href="https://www.linkedin.com/in/rajkavadia/">linkedin.com/in/rajkavadia</a></div>
+      </div>
+    </header>
+
+    <section>
+      <h2>Executive Summary</h2>
+      <p class="summary">
+        Senior Mobile Engineer with 9+ years of experience shipping native Android (Kotlin, Jetpack Compose) and cross-platform Flutter applications across FinTech, Government Social Security Schemes, and US Senior Care. Author of 11 published Dart &amp; Flutter packages on pub.dev, including MCP servers for live Dart VM state inspection, change-impact analysis, and end-to-end UI automation.
+      </p>
+      <div class="metrics-row">
+        <div class="metric-box">
+          <div class="metric-val">9+ Years</div>
+          <div class="metric-lbl">Android &amp; Flutter Delivery</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-val">-40% Size</div>
+          <div class="metric-lbl">APK/AAB Optimization</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-val">2w &rarr; 3d</div>
+          <div class="metric-lbl">CI/CD Release Cycle</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-val">11 Packages</div>
+          <div class="metric-lbl">Published on pub.dev</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Technical Skills</h2>
+      <div class="skills-table">
+        <strong>Languages:</strong> <span>Kotlin, Dart, Java, Python</span>
+        <strong>Mobile &amp; UI:</strong> <span>Android SDK, Flutter, Jetpack Compose, Kotlin Multiplatform (KMP), Material Design 3, WCAG 2.1 AA</span>
+        <strong>Architecture &amp; State:</strong> <span>Clean Architecture, MVVM, MVI, Repository Pattern, Hilt, Dagger, Coroutines, Flow, BLoC, Riverpod, GetX</span>
+        <strong>Networking &amp; Data:</strong> <span>Retrofit, OkHttp, Ktor, GraphQL, WebSockets, Room, DataStore, Hive, Firebase, AES Encryption</span>
+        <strong>Testing &amp; Delivery:</strong> <span>JUnit, MockK, Mockito, Espresso, Appium, GitHub Actions, Gradle, ProGuard/R8, Play App Bundles</span>
+        <strong>AI &amp; Developer Tools:</strong> <span>Model Context Protocol (MCP), Cursor, Claude, Kiro, OpenCode, Codex CLI, Dart VM Service</span>
+      </div>
+    </section>
+
+    <section>
+      <h2>Professional Experience</h2>
+
+      <div class="entry">
+        <div class="entry-head">
+          <div><span class="entry-title">Senior Mobile Application Developer</span> · <span class="entry-company">OPLinnovate (OnlinePSBLoans)</span> — Ahmedabad</div>
+          <span class="entry-date">Mar 2023 – Present</span>
+        </div>
+        <ul>
+          <li>Architected fintech loan-origination applications with Kotlin, Jetpack Compose, and Kotlin Multiplatform, <strong>reducing customer onboarding time by 35%</strong>.</li>
+          <li>Led the migration of legacy XML layouts to Jetpack Compose across <strong>20+ screens</strong> with Material Design 3, <strong>boosting developer velocity by 30%</strong>.</li>
+          <li>Engineered secure document upload and e-sign workflows with AES encryption, passing production VAPT security audits with <strong>zero critical findings</strong>.</li>
+          <li>Automated sprint build, test, and Play Store release pipelines via GitHub Actions, <strong>cutting release cycles from 2 weeks to 3 days</strong>.</li>
+          <li>Optimized release binaries with ProGuard, resource shrinking, and App Bundles (<strong>40% APK size reduction</strong>, <strong>4.5+★ Play Store rating</strong>) and mentored a team of 5 engineers with <strong>80%+ unit/UI test coverage</strong> on core modules.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <div><span class="entry-title">Lead Mobile Application Developer</span> · <span class="entry-company">Ekshot Advertcomm Pvt. Ltd.</span> — Gandhidham</div>
+          <span class="entry-date">Dec 2022 – Mar 2023</span>
+        </div>
+        <ul>
+          <li>Owned mobile architecture, Scrum planning, delivery, and code reviews for the EkShot Business SaaS advertising and commerce platform.</li>
+          <li>Built real-time ad-campaign telemetry with WebSockets and Firebase, <strong>increasing client reporting accuracy by 40%</strong>.</li>
+          <li>Introduced modular feature-based Clean Architecture (<strong>build times down 30%</strong>), mentored junior engineers (<strong>bug escape rate down 25%</strong>), and reduced release binary size by <strong>35%</strong>.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <div><span class="entry-title">Mobile Application Developer</span> · <span class="entry-company">E2 Infosystems</span> — Chennai</div>
+          <span class="entry-date">Oct 2020 – Dec 2022</span>
+        </div>
+        <ul>
+          <li>Built Kotlin, Jetpack, Flutter, and KMP apps for enterprise and e-commerce clients, <strong>lifting user retention by 20%</strong>.</li>
+          <li>Shipped CATIE Mobile and CATIE IRP (Android &amp; iOS) for Status Solutions across US senior-care communities with real-time emergency alerts and offline sync.</li>
+          <li>Integrated Razorpay and Stripe payment flows (<strong>+30% transaction success</strong>), optimized Retrofit/OkHttp REST layers (<strong>-25% load time</strong>), and mentored 3 junior developers (<strong>-20% production bug rate</strong>).</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <div><span class="entry-title">Android Developer</span> · <span class="entry-company">RSP Innovations</span> — Bengaluru</div>
+          <span class="entry-date">Jul 2018 – Oct 2020</span>
+        </div>
+        <ul>
+          <li>Delivered consumer Android apps with Kotlin, KMP, and Google Maps/Location APIs (<strong>+25% engagement</strong>, <strong>-25% load time</strong>), lifting Play Store rating from <strong>3.9 to 4.3★</strong> across 10+ redesigned Material screens and cutting APK size by <strong>28%</strong>.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <div><span class="entry-title">Android Developer</span> · <span class="entry-company">Ghost Technologies</span> (`Jun 2017 – Jul 2018`) &amp; <span class="entry-title">Trainee Android Developer</span> · <span class="entry-company">Palle Technologies</span> (`Aug 2016 – Jun 2017`)</div>
+          <span class="entry-date">Aug 2016 – Jul 2018</span>
+        </div>
+        <ul>
+          <li>Cut screen load times by <strong>50%</strong>, resolved memory leaks via Android Profiler to sustain <strong>60 FPS</strong> rendering, ran Firebase Remote Config A/B tests, and shipped 3 internal MVVM Android utility apps.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Key Production Apps &amp; Open-Source Packages</h2>
+      <div class="two-col">
+        <div class="card">
+          <div class="card-title">Prayaas (SIDBI) <span class="card-tag">10K+ Downloads · 4.1★</span></div>
+          <p style="font-size:9pt;color:#4b5563;margin-top:4px;">Paperless microfinance borrower origination in Flutter &amp; BLoC with offline sync and multilingual accessibility.</p>
+        </div>
+        <div class="card">
+          <div class="card-title">CATIE Mobile &amp; IRP <span class="card-tag">US Senior Care · iOS/Android</span></div>
+          <p style="font-size:9pt;color:#4b5563;margin-top:4px;">Real-time emergency alert routing and in-room portal with FCM and offline-resilient sync.</p>
+        </div>
+        <div class="card">
+          <div class="card-title">GST Sahay, SBI Sahaj &amp; PNB Sahay <span class="card-tag">OCEN · AA · MSME</span></div>
+          <p style="font-size:9pt;color:#4b5563;margin-top:4px;">MSME invoice financing &amp; working capital apps built on OCEN, Account Aggregator, and bank LOS APIs.</p>
+        </div>
+        <div class="card">
+          <div class="card-title">Open-Source MCP &amp; Dart Tooling <span class="card-tag">pub.dev &amp; GitHub</span></div>
+          <p style="font-size:9pt;color:#4b5563;margin-top:4px;"><code>flutter_ai_whisper</code>, <code>impact_analyzer</code>, <code>marrionate_extended_mcp</code>, <code>stratum</code>, <code>di_manager</code>, <code>cross_logger</code>, <code>flutter_pub_analyzer</code>, <code>pdf_checker</code>.</p>
+        </div>
+      </div>
+    </section>
+
+    <section style="margin-bottom:0;">
+      <h2>Education</h2>
+      <div class="entry-head">
+        <div><span class="entry-title">Bachelor of Engineering in Information Technology</span> · <span class="entry-company">Marwadi University</span> (First Class)</div>
+        <span class="entry-date">Jun 2012 – May 2016</span>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
