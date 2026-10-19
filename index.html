@@ -41,7 +41,7 @@
 }
 </script>
 <script>
-(function(){try{var t=localStorage.getItem('rk-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.classList.add('dark');}}catch(e){}})();
+(function(){try{var t=localStorage.getItem('rk-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.classList.add('dark');}if('IntersectionObserver' in window&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches){document.documentElement.classList.add('reveal-enabled');}}catch(e){}})();
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -153,11 +153,11 @@
 
 <section id="about" class="p-8 sm:p-12 md:p-16 lg:p-24">
   <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
-    <div class="lg:col-span-4">
+    <div class="lg:col-span-4" data-reveal="left">
       <h2 class="text-3xl sm:text-4xl md:text-5xl xl:text-7xl font-bold text-gray-900">About Me</h2>
       <div class="w-[75px] h-[5px] mt-2 rounded-full" style="background-color:#1d4ed8"></div>
     </div>
-    <div class="lg:col-span-8 space-y-8">
+    <div class="lg:col-span-8 space-y-8" data-reveal="right">
       <p class="text-lg sm:text-xl md:text-2xl leading-relaxed text-gray-600">Senior Mobile Engineer in Ahmedabad, open to remote work. I have spent about nine years shipping Android and Flutter products across fintech, government schemes, and senior care, and I publish Dart libraries for Flutter state inspection, change-impact analysis, end-to-end automation, dependency injection, logging, and PDFs. Day to day I work with AI-assisted tools, including Cursor, Claude, Kiro, and OpenCode.</p>
       <p class="text-base sm:text-lg leading-relaxed text-gray-600" style="font-style:italic">“The world can be changed with a few thousands of lines of code, I am willing to contribute a few hundred.”</p>
       <div class="pt-4 space-y-6">
@@ -185,7 +185,7 @@
 
 <section id="skills" class="p-8 sm:p-12 md:p-16 lg:p-24">
   <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
-    <div class="lg:col-span-4"><h2 class="text-3xl sm:text-4xl md:text-5xl xl:text-7xl font-bold text-gray-900">Skills</h2><div class="w-[75px] h-[5px] mt-2 rounded-full" style="background-color:#1d4ed8"></div></div>
+    <div class="lg:col-span-4" data-reveal="left"><h2 class="text-3xl sm:text-4xl md:text-5xl xl:text-7xl font-bold text-gray-900">Skills</h2><div class="w-[75px] h-[5px] mt-2 rounded-full" style="background-color:#1d4ed8"></div></div>
     <div class="lg:col-span-8 space-y-8">
       <div><h3 class="text-lg sm:text-xl font-semibold text-gray-900">Languages</h3><div class="mt-3 flex flex-wrap gap-2"><span class="px-3 py-1.5 bg-gray-100 text-gray-800 rounded-full text-sm sm:text-base font-medium">Kotlin</span><span class="px-3 py-1.5 bg-gray-100 text-gray-800 rounded-full text-sm sm:text-base font-medium">Dart</span><span class="px-3 py-1.5 bg-gray-100 text-gray-800 rounded-full text-sm sm:text-base font-medium">Java</span><span class="px-3 py-1.5 bg-gray-100 text-gray-800 rounded-full text-sm sm:text-base font-medium">Python</span></div></div>
       <div><h3 class="text-lg sm:text-xl font-semibold text-gray-900">Mobile</h3><div class="mt-3 flex flex-wrap gap-2"><span class="px-3 py-1.5 bg-gray-100 text-gray-800 rounded-full text-sm sm:text-base font-medium">Android SDK</span><span class="px-3 py-1.5 bg-gray-100 text-gray-800 rounded-full text-sm sm:text-base font-medium">Flutter</span><span class="px-3 py-1.5 bg-gray-100 text-gray-800 rounded-full text-sm sm:text-base font-medium">Jetpack Compose</span><span class="px-3 py-1.5 bg-gray-100 text-gray-800 rounded-full text-sm sm:text-base font-medium">Kotlin Multiplatform</span><span class="px-3 py-1.5 bg-gray-100 text-gray-800 rounded-full text-sm sm:text-base font-medium">Material Design 3</span><span class="px-3 py-1.5 bg-gray-100 text-gray-800 rounded-full text-sm sm:text-base font-medium">Material You</span></div></div>
@@ -202,16 +202,16 @@
 
 <section id="projects" class="p-8 sm:p-12 md:p-16 lg:p-24">
   <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
-    <div class="lg:col-span-4"><h2 class="text-3xl sm:text-4xl md:text-5xl xl:text-7xl font-bold text-gray-900">Projects</h2><div class="w-[75px] h-[5px] mt-2 rounded-full" style="background-color:#1d4ed8"></div><p class="text-base text-gray-600 leading-relaxed" style="margin-top:1rem">Production apps for SIDBI, SBI, PNB, FinAGG and Status Solutions. Expand a case study for role, architecture and impact.</p></div>
+    <div class="lg:col-span-4" data-reveal="left"><h2 class="text-3xl sm:text-4xl md:text-5xl xl:text-7xl font-bold text-gray-900">Projects</h2><div class="w-[75px] h-[5px] mt-2 rounded-full" style="background-color:#1d4ed8"></div><p class="text-base text-gray-600 leading-relaxed" style="margin-top:1rem">Production apps for SIDBI, SBI, PNB, FinAGG and Status Solutions. Expand a case study for role, architecture and impact.</p></div>
     <div class="lg:col-span-8"><div class="space-y-8" id="projects-list"></div></div>
   </div>
 </section>
 
 <section id="packages" class="p-8 sm:p-12 md:p-16 lg:p-24">
   <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
-    <div class="lg:col-span-4"><h2 class="text-3xl sm:text-4xl md:text-5xl xl:text-7xl font-bold text-gray-900">Packages</h2><div class="w-[75px] h-[5px] mt-2 rounded-full" style="background-color:#1d4ed8"></div><p class="text-base text-gray-600 leading-relaxed" style="margin-top:1rem">Open-source Dart &amp; Flutter tooling — MCP servers, state, DI, logging and CLI tools published on pub.dev and GitHub.</p></div>
+    <div class="lg:col-span-4" data-reveal="left"><h2 class="text-3xl sm:text-4xl md:text-5xl xl:text-7xl font-bold text-gray-900">Packages</h2><div class="w-[75px] h-[5px] mt-2 rounded-full" style="background-color:#1d4ed8"></div><p class="text-base text-gray-600 leading-relaxed" style="margin-top:1rem">Open-source Dart &amp; Flutter tooling — MCP servers, state, DI, logging and CLI tools published on pub.dev and GitHub.</p></div>
     <div class="lg:col-span-8">
-      <div class="pkg-filter-bar" role="group" aria-label="Filter packages">
+      <div class="pkg-filter-bar" role="group" aria-label="Filter packages" data-reveal="up">
         <button type="button" class="pkg-filter-btn active" data-pkg-filter="all">All</button>
         <button type="button" class="pkg-filter-btn" data-pkg-filter="mcp">MCP Servers</button>
         <button type="button" class="pkg-filter-btn" data-pkg-filter="state">State &amp; DI</button>
@@ -225,16 +225,16 @@
 
 <section id="experience" class="p-8 sm:p-12 md:p-16 lg:p-24">
   <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
-    <div class="lg:col-span-4"><h2 class="text-3xl sm:text-4xl md:text-5xl xl:text-7xl font-bold text-gray-900">Experience</h2><div class="w-[75px] h-[5px] mt-2 rounded-full" style="background-color:#1d4ed8"></div></div>
+    <div class="lg:col-span-4" data-reveal="left"><h2 class="text-3xl sm:text-4xl md:text-5xl xl:text-7xl font-bold text-gray-900">Experience</h2><div class="w-[75px] h-[5px] mt-2 rounded-full" style="background-color:#1d4ed8"></div></div>
     <div class="lg:col-span-8"><div class="timeline-container" id="experience-list"></div></div>
   </div>
 </section>
 
 <section id="education" class="p-8 sm:p-12 md:p-16 lg:p-24">
   <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
-    <div class="lg:col-span-4"><h2 class="text-3xl sm:text-4xl md:text-5xl xl:text-7xl font-bold text-gray-900">Education</h2><div class="w-[75px] h-[5px] mt-2 rounded-full" style="background-color:#1d4ed8"></div></div>
+    <div class="lg:col-span-4" data-reveal="left"><h2 class="text-3xl sm:text-4xl md:text-5xl xl:text-7xl font-bold text-gray-900">Education</h2><div class="w-[75px] h-[5px] mt-2 rounded-full" style="background-color:#1d4ed8"></div></div>
     <div class="lg:col-span-8"><div class="space-y-8">
-      <div class="bg-white rounded-lg shadow-sm border border-gray-100 p-4 sm:p-5 md:p-6 hover:shadow-md transition-shadow duration-300">
+      <div class="bg-white rounded-lg shadow-sm border border-gray-100 p-4 sm:p-5 md:p-6 hover:shadow-md transition-shadow duration-300" data-reveal="zoom">
         <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-4"><div><h3 class="text-lg sm:text-xl font-semibold text-gray-900">Bachelor of Engineering in Information Technology</h3><p class="text-base sm:text-lg" style="color:#1d4ed8">Marwadi University</p></div><span class="text-xs sm:text-sm text-gray-500 mt-2 sm:mt-0">Jun 2012 - May 2016</span></div>
         <ul class="space-y-2"><li class="flex items-start"><span class="inline-block w-1.5 h-1.5 rounded-full bg-gray-400 mt-2 mr-3 flex-shrink-0"></span><span class="text-sm sm:text-base text-gray-600">First Class</span></li></ul>
       </div>
@@ -362,6 +362,7 @@
   }).join(''); }
 })();
 </script>
+<script src="/js/scroll-reveal.js" defer></script>
 <script src="/js/three.min.js" defer></script>
 <script src="/js/avatar3d.js" defer></script>
 </body>
